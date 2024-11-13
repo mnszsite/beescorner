@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bee's Corner - Philippines Tour Guide Services</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add FontAwesome for icons (Make sure to include the FontAwesome CDN in your head tag) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+
+/* Services Page Styles */
+.services-page {
+    padding: 60px 20px;
+    margin-top: 80px;
+}
+
+.service-section {
+    margin-bottom: 50px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.service-item {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.service-item h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center;
+}
+
+.service-item p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.service-item .cta-btn {
+    margin-top: 20px;
+}
+
+/* Carousel Container */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.carousel-slide img {
+    width: 100%;
+    max-height: 800px;
+    object-fit: fill;
+    border-radius: 4px;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 1.3rem;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Carousel Navigation */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.096);
+    color: white;
+    border: none;
+    padding: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* New Sections (Booking, Pricing) */
+.booking-process, .pricing-info {
+    margin-top: 10px;
+}
+
+.booking-process ul, .pricing-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.booking-process li, .pricing-info li {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #555;
+    
+}
+
+.pricing-info {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.pricing-info h4 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.service-item ul li{
+    padding-bottom: 15px;
+    list-style-type: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .carousel-slide img {
+        height: 250px;
+    }
+
+    .service-item {
+        padding: 20px;
+    }
+
+    .service-title {
+        font-size: 1.8rem;
+    }
+
+    .service-item h3 {
+        font-size: 1.8rem;
+        
+    }
+
+    .service-item p {
+        font-size: 1rem;
+    }
+
+    .service-item .cta-btn {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+
+    .pricing-info h4 {
+        font-size: 1.5rem;
+    }
+
+    .pricing-info li {
+        font-size: 1rem;
+    }
+
+    .gallery-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+    </style>
+    
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="navbar">
+            <img src="images/logo_edited.jpg" alt="logo">
+            <div class="logo">Bee's Corner</div>
+            <div class="hamburger-menu" id="hamburger-menu" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav class="navbar-links" id="navbar-links">
+                <a href="index.html">Home</a>
+                <a href="product.html">Products</a>
+                <a href="service.html">Services</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Explore Our Philippines Tour Guide Service</h1>
+        <p>Discover the beauty of the Philippines with our tailored tour guide services, designed for visitors from Papua New Guinea. Whether for leisure or business, we ensure an enriching experience.</p>
+        <a href="product.html" class="cta-btn">Shop Now</a>
+        <a href="service.html" class="cta-btn secondary">Book a Tour</a>
+    </section>
+
+    <!-- Tour Guide Service Details -->
+    <section class="service-section">
+        <h3 class="service-title">Customized Tours to the Philippines</h3>
+        <div class="service-item">
+            <p>Our tour guide services are designed to help Papua New Guinea visitors make the most of their trip to the Philippines. From city tours to scenic beach getaways, our guides are experienced in providing unique and culturally immersive experiences.</p>
+            <p>Whether you're exploring historical sites, enjoying the vibrant culture, or relaxing in beautiful resorts, we ensure your trip is memorable and tailored to your preferences.</p>
+
+            <!-- Carousel -->
+            <div class="carousel-container">
+                <div class="carousel-slides">
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide">
+                        <img src="images/1731078126062.jpg" alt="Philippines City Tour">
+                        <p>City Tour: Explore historic landmarks and vibrant city life.</p>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide">
+                        <img src="images/1731078128524.jpg" alt="Philippines Beach Tour">
+                        <p>Beach Getaway: Relax and unwind on the stunning beaches.</p>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="carousel-slide">
+                        <img src="images/1731078120895.jpg" alt="Philippines Cultural Tour">
+                        <p>Cultural Experience: Immerse yourself in the local traditions and heritage.</p>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="carousel-slide">
+                        <img src="images/1731078114025.jpg" alt="Philippines Cultural Tour">
+                        <p>Cultural Experience: Immerse yourself in the local traditions and heritage.</p>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="carousel-slide">
+                        <img src="images/1731078130971.jpg" alt="Philippines Cultural Tour">
+                        <p>Cultural Experience: Immerse yourself in the local traditions and heritage.</p>
+                    </div>
+                </div>
+
+                <!-- Carousel Controls (Prev and Next Buttons) -->
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tailored Tours for PNG Travelers -->
+    <section class="service-section">
+        <h3 class="service-title"> Tailored Tours for PNG Travelers</h3>
+        <div class="service-item">
+            <p>We understand that every traveler has unique preferences. That's why we tailor our tours specifically for Papua New Guinea visitors, ensuring that your experience in the Philippines is both comfortable and authentic. Whether you're interested in adventure, culture, or relaxation, we have something for you.</p>
+            <ul>
+                <li>Custom itineraries based on your interests (beaches, adventure, culture, history).</li>
+                <li>Language support for smooth communication.</li>
+                <li>Private and group tour options available.</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- FAQ Section -->
+    <section class="service-section">
+        <h3 class="service-title"> Frequently Asked Questions (FAQ)</h3>
+        <div class="service-item">
+            <ul>
+                <li><strong>What are the visa requirements for PNG citizens traveling to the Philippines?</strong> Papua New Guinea citizens can travel to the Philippines without a visa for stays of up to 30 days. Please ensure your passport is valid for at least six months upon entry.</li>
+                <li><strong>Is it safe for PNG travelers to visit the Philippines?</strong> Yes, the Philippines is a popular destination for travelers worldwide. Our guides prioritize your safety by ensuring you are well-informed and supported throughout your journey.</li>
+                <li><strong>What language will the tour guides speak?</strong> Our guides speak English and can assist in communicating with locals in the Philippines. Some guides may also speak basic Tok Pisin or Hiri Motu for added convenience.</li>
+                <li><strong>Can I request a custom itinerary?</strong> Absolutely! We can tailor the itinerary to your preferences, whether you’re interested in historical landmarks, nature, or beach resorts.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Safety Tips Section -->
+<section class="service-section safety-tips">
+    <h3 class="service-title">Safety & Travel Tips</h3>
+    <div class="service-item">
+        <ul>
+            <li><i class="fas fa-user-md"></i> <strong>Health and Safety:</strong> Make sure to check any health advisories and vaccinations before traveling. We recommend carrying personal medical supplies and always drinking bottled water.</li>
+            <li><i class="fas fa-camera-retro"></i> <strong>Local Customs:</strong> Be respectful of local traditions and customs. Always ask before taking photos, especially in sacred or private areas.</li>
+            <li><i class="fas fa-phone-alt"></i> <strong>Emergency Numbers:</strong> In case of emergency, dial 911 in the Philippines for immediate assistance.</li>
+            <li><i class="fas fa-sun"></i> <strong>Climate:</strong> The Philippines has a tropical climate, so pack light clothing and sunscreen. Stay hydrated and be aware of seasonal weather patterns, especially during the monsoon season.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Booking Process Section -->
+<section class="service-section booking-process">
+    <h3 class="service-title">How to Book a Tour</h3>
+    <div class="service-item">
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Select the tour package that best suits your travel needs (e.g., city tour, cultural experience, or beach getaway).</li>
+            <li><i class="fas fa-phone-alt"></i> Contact us via email or phone to discuss your itinerary and preferences.</li>
+            <li><i class="fas fa-file-alt"></i> We will provide a detailed itinerary and a customized quote based on your needs.</li>
+            <li><i class="fas fa-credit-card"></i> Confirm your booking by making the necessary payment via your preferred method.</li>
+            <li><i class="fas fa-heart"></i> Enjoy your guided tour in the Philippines with an expert guide!</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Pricing Information Section -->
+<section class="service-section pricing-info">
+    <h3 class="service-title">Pricing Information</h3>
+    
+    <div class="service-item">
+        <p style="padding-bottom: 20px ; text-align: center;"> <strong>Pricing for our Philippines tour guide services is in single package which covers all the items mentioned below:</strong></p>
+        <ul>
+            <li><strong>Airfares:</strong> Round-trip airfare between Port Moresby (POM) and Manila (MNL), with flexible dates and budget-friendly options available.</li>
+            <li><strong>City Tours:</strong> Explore the city's top attractions and hidden gems with a local guide.</li>
+            <li><strong>Cultural Tours:</strong> Immerse yourself in the local culture, visit museums, art galleries, and historic sites.</li>
+            <li><strong>Beach Getaway Tours:</strong> Enjoy the sun, sand, and sea with private beach access and water activities.</li>
+            <li><strong>Accommodation:</strong> Stay in comfortable hotels or resorts, with options ranging from budget to luxury accommodations. We ensure a relaxing stay for all our guests.</li>
+            <li><strong>Lunch:</strong> A selection of local and international cuisines available, with meals included during tours. Special dietary preferences can be catered to upon request.</li>
+            <li><strong>Vehicle Arrangements:</strong> Comfortable transportation for all your sightseeing needs, including private vehicles, buses, or shuttle services for group bookings.</li>
+            <li><strong>Sightseeing:</strong> Guided tours to popular attractions and hidden gems, including beaches, parks, museums, and historic sites.</li>
+            <li><strong>Tourist Guides:</strong> Experienced, friendly guides who will provide insights and local knowledge to make your trip memorable. Available in multiple languages.</li>
+            <li><strong>Custom Tours:</strong> Tailored tours based on your preferences and requirements. Whether it's a family vacation, business trip, or group tour, we offer personalized itineraries.</li>
+        </ul>
+    </div>
+</section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+    <h2>Ready to Get Started?</h2>
+    <p>Contact us today to discuss how we can assist with you.</p>
+    <a href="contact.html" class="btn" id="cta-btn">Contact Us</a>
+    </section>
+
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2024 Bee's Corner. All Rights Reserved.</p>
+    <div class="social-icons">
+        <h3 style="padding-bottom: 15px;">Follow Us</h3>
+        <a href="#" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/67572102876" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <div class="dev">
+        <p>Powered By: <a href="https://mnszsite.github.io/mnszsite" target="_blank"> Mnszsite.aw</a></p>
+    </div>
+</footer>
+
+    <!-- JavaScript for Toggle Menu -->
+    <script>
+        function toggleMenu() {
+            document.getElementById('navbar-links').classList.toggle('show');
+        }
+    </script>
+
+    <!-- Carousel JS -->
+    <script>
+        let slideIndex = 0;
+
+        function moveSlide(step) {
+            const slides = document.querySelectorAll(".carousel-slide");
+            slideIndex += step;
+
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+
+            const newTransform = -100 * slideIndex + '%';
+            document.querySelector(".carousel-slides").style.transform = `translateX(${newTransform})`;
+        }
+    </script>
+</body>
+
+</html>

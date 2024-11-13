@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bee's Corner - About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+
+        /* About Page Styles */
+        .about-page {
+            padding: 80px 20px;
+            margin-top: 80px; /* To avoid content hiding under the header */
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            background-color: #f9f9f9;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .why-choose-us h3 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .why-choose-us ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .why-choose-us ul li {
+            font-size: 1.2rem;
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+
+        /* Team Section (Optional) */
+        .team-section {
+            padding: 60px 20px;
+        }
+
+        .team-section h3 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            text-align: center;
+            width: 250px;
+        }
+
+        .team-member img {
+            width: 100%;
+            border-radius: 50%;
+            border: 4px solid #ffcc00;
+            margin-bottom: 15px;
+        }
+
+        .team-member h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .team-member p {
+            font-size: 1rem;
+            color: #777;
+        }
+    
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="navbar">
+            <img src="images/logo_edited.jpg" alt="logo">
+            <div class="logo">Bee's Corner</div>
+            <div class="hamburger-menu" id="hamburger-menu" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav class="navbar-links" id="navbar-links">
+                <a href="index.html">Home</a>
+                <a href="product.html">Products</a>
+                <a href="service.html">Services</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Page Content -->
+    <section class="about-page">
+        <!-- Introduction Section -->
+        <section class="intro">
+            <h2>Welcome to Bee's Corner</h2>
+            <p>Bee's Corner is your one-stop shop for beauty products, custom wedding rings, and tailored tours. Our goal is to offer high-quality products and services that bring beauty and joy into your life, whether you're shopping for yourself or planning a once-in-a-lifetime event.</p>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-choose-us">
+            <h3>Why Choose Bee's Corner?</h3>
+            <ul>
+                <li><strong>High-Quality Products:</strong> We handpick the best beauty products and wedding rings to offer you only the finest.</li>
+                <li><strong>Personalized Services:</strong> From custom tour experiences to tailored wedding rings, we focus on what makes you feel special.</li>
+                <li><strong>Trusted by Our Clients:</strong> Our reputation speaks for itself. Bee's Corner is a name you can trust.</li>
+                <li><strong>Expert Knowledge:</strong> With years of experience, we know what it takes to make your experience flawless.</li>
+            </ul>
+        </section>
+
+        <!-- Team Section (Optional) -->
+        <section class="team-section">
+            <h3>Meet Our Team</h3>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/200x200" alt="Team Member">
+                    <h4>Bee Ma'u</h4>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/200x200" alt="Team Member">
+                    <h4>John Doe</h4>
+                    <p>Tour Guide Specialist</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/200x200" alt="Team Member">
+                    <h4>Jane Smith</h4>
+                    <p>Product Specialist</p>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2024 Bee's Corner. All Rights Reserved.</p>
+    <div class="social-icons">
+        <h3 style="padding-bottom: 15px;">Follow Us</h3>
+        <a href="#" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/67572102876" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <div class="dev">
+        <p>Powered By: <a href="https://mnszsite.github.io/mnszsite" target="_blank"> Mnszsite.aw</a></p>
+    </div>
+</footer>
+
+    <!-- JavaScript for Toggle Menu -->
+    <script>
+        function toggleMenu() {
+            document.getElementById('navbar-links').classList.toggle('show');
+        }
+    </script>
+</body>
+
+</html>
