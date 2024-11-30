@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        
-
         /* About Page Styles */
         .about-page {
             padding: 80px 20px;
@@ -56,46 +54,133 @@
             line-height: 1.8;
         }
 
-        /* Team Section (Optional) */
+        /* Team Section */
+        /* Team Section Styles */
         .team-section {
             padding: 60px 20px;
+            text-align: center;
         }
 
         .team-section h3 {
             font-size: 2.5rem;
-            text-align: center;
             margin-bottom: 30px;
+            color: #0c0c0c; /* Ensure the title color is white */
         }
 
+        /* Team Member Card Styles */
         .team-members {
             display: flex;
             justify-content: center;
             gap: 40px;
             flex-wrap: wrap;
+            margin-top: 20px;
         }
 
         .team-member {
-            text-align: center;
-            width: 250px;
+            width: 300px; /* Set card width */
+            background-color: #e6e4de; /* Dark background color */
+            color: #0a0a0a; /* Text color inside card */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px; /* Space between cards */
         }
 
-        .team-member img {
+        .team-member:hover {
+            transform: translateY(-10px); /* Add a hover effect for card */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Circular Image Container */
+        .team-member-img-container {
             width: 100%;
-            border-radius: 50%;
-            border: 4px solid #ffcc00;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .team-member-img {
+            width: 120px; /* Set image size */
+            height: 120px; /* Set image size */
+            object-fit: cover; /* Ensure the image covers the circle without distortion */
+            border-radius: 50%; /* Make the image circular */
+            border: 4px solid #fffef9; /* Yellow border around the image */
+        }
+
+        /* Team Member Info (Name and Role) */
+        .team-member-info {
+            padding: 15px;
+        }
+
+        .team-member-info h4 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: black; /* Yellow color for the name */
+        }
+
+        .team-member-info p {
+            font-size: 1.1rem;
+            color: #ddd; /* Light gray color for the role */
+        }
+
+
+
+
+        /* Business Background Section */
+        .business-background {
+            background-color: #f4f4f4;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .business-background h3 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .business-background p {
+            font-size: 1.2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Vision and Mission Section */
+        .vision-mission {
+            padding: 60px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .vision-mission h3 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .vision-mission h4 {
+            font-size: 1.8rem;
             margin-bottom: 15px;
         }
 
-        .team-member h4 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+        .vision-mission p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
         }
 
-        .team-member p {
-            font-size: 1rem;
-            color: #777;
+        .core-values {
+            list-style: none;
+            padding: 0;
+            font-size: 1.2rem;
         }
-    
+
+        .core-values li {
+            margin-bottom: 15px;
+        }
+
     </style>
 </head>
 
@@ -128,6 +213,12 @@
             <p>Bee's Corner is your one-stop shop for beauty products, custom wedding rings, and tailored tours. Our goal is to offer high-quality products and services that bring beauty and joy into your life, whether you're shopping for yourself or planning a once-in-a-lifetime event.</p>
         </section>
 
+        <!-- Business Background Section -->
+        <section class="business-background">
+            <h3>Business Background</h3>
+            <p>Bee's Corner was founded with the aim of making complex processes simple for individuals and businesses. From travel planning to educational placements, Bee's Corner has steadily expanded its range of services, earning the trust of its clients.</p>
+        </section>
+
         <!-- Why Choose Us Section -->
         <section class="why-choose-us">
             <h3>Why Choose Bee's Corner?</h3>
@@ -139,43 +230,98 @@
             </ul>
         </section>
 
-        <!-- Team Section (Optional) -->
+        <!-- Vision and Mission Section -->
+        <section class="vision-mission">
+            <h3>Our Vision & Mission</h3>
+            <h4>Mission Statement</h4>
+            <p>We are committed to delivering exceptional consultancy and travel services, empowering clients to achieve their personal and professional goals with efficiency and effectiveness. Our focus is on fostering long-term relationships built on safety, quality, timely service, and a proactive understanding of our clients’ needs.</p>
+
+            <h4>Vision Statement</h4>
+            <p>To be the leading agency recognized for delivering reliable, client-focused services locally and internationally.</p>
+
+            <h4>Core Values</h4>
+            <ul class="core-values">
+                <li><strong>Trustworthiness</strong></li>
+                <li><strong>Excellence</strong></li>
+                <li><strong>Client-Centric Approach</strong></li>
+            </ul>
+        </section>
+
+        <!-- Team Section -->
         <section class="team-section">
             <h3>Meet Our Team</h3>
             <div class="team-members">
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/200x200" alt="Team Member">
-                    <h4>Bee Ma'u</h4>
-                    <p>Founder & CEO</p>
+                    <div class="team-member-img-container">
+                        <img src="images/1731078114025.jpg" alt="Bagi Mau" class="team-member-img">
+                    </div>
+                    <div class="team-member-info">
+                        <h4>Bagi Mau</h4>
+                        <p>Director</p>
+                    </div>
                 </div>
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/200x200" alt="Team Member">
-                    <h4>John Doe</h4>
-                    <p>Tour Guide Specialist</p>
+                    <div class="team-member-img-container">
+                        <img src="images/1731078120895.jpg" alt="Awa Office Works & Logistics" class="team-member-img">
+                    </div>
+                    <div class="team-member-info">
+                        <h4>Awa Office Works & Logistics</h4>
+                        <p>Distributor</p>
+                    </div>
                 </div>
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/200x200" alt="Team Member">
-                    <h4>Jane Smith</h4>
-                    <p>Product Specialist</p>
+                    <div class="team-member-img-container">
+                        <img src="images/1731078126062.jpg" alt="Bronny Junior Mau" class="team-member-img">
+                    </div>
+                    <div class="team-member-info">
+                        <h4>Bronny Junior Mau</h4>
+                        <p>Dispatcher / Assistant Consultant</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-img-container">
+                        <img src="images/1731078133744.jpg" alt="Metin Tsenawatime" class="team-member-img">
+                    </div>
+                    <div class="team-member-info">
+                        <h4>Metin Tsenawatime</h4>
+                        <p>Travel Event Planner</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-img-container">
+                        <img src="images/1731078136499.jpg" alt="Greg Nau" class="team-member-img">
+                    </div>
+                    <div class="team-member-info">
+                        <h4>Greg Nau</h4>
+                        <p>School Placement Agent</p>
+                    </div>
                 </div>
             </div>
         </section>
 
+
     </section>
 
-<!-- Footer Section -->
-<footer>
-    <p>&copy; 2024 Bee's Corner. All Rights Reserved.</p>
-    <div class="social-icons">
-        <h3 style="padding-bottom: 15px;">Follow Us</h3>
-        <a href="#" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/67572102876" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-    </div>
-    <div class="dev">
-        <p>Powered By: <a href="https://mnszsite.github.io/mnszsite" target="_blank"> Mnszsite.aw</a></p>
-    </div>
-</footer>
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <h2>Get in Touch</h2>
+        <p>Contact us today to discuss how we can assist you.</p>
+        <a href="contact.html" class="btn">Contact Us</a>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Bee's Corner. All Rights Reserved.</p>
+        <div class="social-icons">
+            <h3 style="padding-bottom: 15px;">Follow Us</h3>
+            <a href="#" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/67572102876" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="dev">
+            <p>Powered By: <a href="https://mnszsite.github.io/mnszsite" target="_blank"> Mnszsite.aw</a></p>
+        </div>
+    </footer>
 
     <!-- JavaScript for Toggle Menu -->
     <script>

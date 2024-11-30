@@ -91,13 +91,13 @@ header {
 /* Hero Section */
 .hero {
     position: relative;  /* Required for pseudo-element positioning */
-    background-image: url('images/logo_edited.jpg'); /* Your actual image URL */
-    background-size: contain;
+    background-image: url('images/1731078130971.jpg'); /* Your actual image URL */
+    background-size: cover;
     background-position: center;
     color: white;
     text-align: center;
-    padding: 45px 20px;
-    margin-top: 80px; /* To avoid content hiding under the header */
+    padding: 20px 20px;
+    margin-top: 20px; /* To avoid content hiding under the header */
 }
 
 /* The dimming overlay on the background image */
@@ -119,14 +119,14 @@ header {
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: 20px;
+    margin-top: 100px;
 }
 
 .hero p {
     font-size: 1.5rem;
-    margin-bottom: 40px;
+    margin-bottom: 5px;
 }
 
 .hero .cta-btn {
@@ -141,7 +141,7 @@ header {
 }
 
 .hero .cta-btn:hover {
-    background-color: #f5b800;
+    background-color: #b38c19;
 }
 
 .hero .cta-btn.secondary {
@@ -153,13 +153,21 @@ header {
     background-color: #444;
 }
 
+@media (max-width: 768px){
+    .hero h1 {
+        margin-top: 20px;
+    }
+}
+    
+
+
 
 /* Call to Action Section */
     .cta {
+        background-color: #f5b800;
         color: rgba(0, 0, 0, 0.795); /* White text */
-        padding: 50px 20px;
+        padding: 30px 20px;
         text-align: center;
-        border-radius: 8px; /* Rounded corners */
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
@@ -194,6 +202,167 @@ header {
         background-color: #ac8e07;
         color: #fff;
         }
+
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 60px 20px; /* Adjusted padding for larger screens */
+            background-color: #f9f9f9; /* Lighter background */
+            color: #333; /* Dark text for contrast */
+            text-align: center; /* Center the content */
+            border-radius: 10px; /* Rounded corners */
+            margin: 0 auto; /* Center the section horizontally */
+        }
+    
+        /* Title */
+        .testimonials h2 {
+            font-size: 2.5rem; /* Larger title for desktop */
+            color: #333; /* Dark color for the title */
+            margin-bottom: 30px; /* Spacing below title */
+            text-align: center; /* Center the title */
+        }
+    
+        /* Testimonial Container */
+        .testimonial-container {
+            display: flex; /* Flexbox for a horizontal layout */
+            justify-content: center; /* Center the items horizontally */
+            align-items: center; /* Center the items vertically */
+            gap: 30px; /* Space between the testimonials */
+            margin-top: 30px; /* Add space above testimonials */
+        }
+    
+        /* Blockquotes */
+        blockquote {
+            margin: 0;
+            border-left: 5px solid #ffcc00; /* Highlight border for blockquotes */
+            padding-left: 20px; /* Space for text */
+            font-style: italic;
+            color: #555; /* Darker text for readability */
+            background-color: rgba(255, 255, 255, 0.9); /* Slight background contrast */
+            border-radius: 8px; /* Rounded corners */
+            padding: 20px; /* Padding around the quote */
+            font-size: 1.1em; /* Adjust font size for readability */
+            max-width: 700px; /* Limit the max width */
+            line-height: 1.6; /* Line height for readability */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            transition: transform 0.3s ease; /* Smooth hover effect */
+            margin-left: auto; /* Center horizontally */
+            margin-right: auto;
+        }
+    
+        /* Hover effect for blockquote */
+        blockquote:hover {
+            transform: translateY(-5px); /* Slight lift effect */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+        }
+    
+        /* Citation Style */
+        cite {
+            display: block; /* Block layout for citation */
+            margin-top: 15px;
+            font-weight: bold;
+            color: #ffcc00; /* Highlight color for the citation */
+            font-size: 1.1em;
+        }
+    
+        /* Citation Icon */
+        cite i {
+            margin-right: 10px; /* Space between icon and name */
+            font-size: 1.5em; /* Larger icon */
+            color: #ffcc00; /* Match the highlight color */
+        }
+    
+        /* Carousel */
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+    
+        /* Carousel Container */
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;
+        }
+    
+        /* Carousel Items */
+        .carousel-container blockquote {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px; /* Add padding around each testimonial */
+        }
+    
+        /* Carousel Navigation Buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 12px 18px; /* Slightly bigger buttons */
+            cursor: pointer;
+            z-index: 1;
+            border-radius: 50%;
+        }
+    
+        .prev {
+            left: 10px;
+        }
+    
+        .next {
+            right: 10px;
+        }
+    
+        /* Responsive Adjustments for Mobile */
+        @media (max-width: 768px) {
+            .testimonials {
+                padding: 30px 20px; /* Reduce padding on smaller screens */
+            }
+    
+            .testimonials h2 {
+                font-size: 2rem; /* Slightly smaller title on mobile */
+                margin-bottom: 20px; /* Less space below the title */
+            }
+    
+            /* Testimonial Layout */
+            .testimonial-container {
+                flex-direction: column; /* Stack testimonials vertically */
+                gap: 20px; /* Less gap between stacked testimonials */
+            }
+    
+            blockquote {
+                font-size: 1em; /* Slightly smaller text */
+                max-width: 100%; /* Remove max width constraint */
+                padding: 15px; /* Adjust padding for mobile */
+            }
+    
+            .carousel-container {
+                width: 100%; /* Ensure the carousel container takes full width */
+            }
+    
+            .prev, .next {
+                padding: 8px 12px; /* Smaller carousel buttons for mobile */
+            }
+        }
+    
+        @media (max-width: 480px) {
+            .testimonials h2 {
+                font-size: 1.5rem; /* Even smaller title for very small screens */
+                margin-bottom: 15px;
+            }
+    
+            blockquote {
+                font-size: 0.9em; /* Smaller font size for very small screens */
+                padding: 12px 15px;
+            }
+    
+            cite {
+                font-size: 0.85em; /* Smaller citation text for mobile */
+            }
+        }
+
 
     /* Footer */
     footer {
@@ -288,4 +457,100 @@ header {
         margin-right: 15px;
         transition: background-color 0.3s;
         }
+}
+
+
+/* services section on home page and serive page */
+/* Services Section */
+.services {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Services Grid Layout */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Service Item */
+.service-item {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-item h3 {
+    font-size: 1.6rem;
+    margin-top: 20px;
+    color: #333;
+}
+
+.service-item p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Service Icon */
+.service-icon {
+    font-size: 3rem;
+    color: #ffcc00;
+    transition: color 0.3s ease;
+}
+
+.service-item:hover .service-icon {
+    color: #ffb700;
+}
+
+/* CTA Button */
+.cta-btn {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    margin-top: 50px;
+}
+
+.cta-btn:hover {
+    background-color: #444;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .services h2 {
+        font-size: 2rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* Stack items on smaller screens */
+    }
+
+    .cta h2{
+        font-size: 2rem;
+    }
+
+    .cta-btn {
+        padding: 12px 25px;
+    }
 }

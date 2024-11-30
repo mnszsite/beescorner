@@ -10,9 +10,13 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* Product Page Styles */
+        .hero {
+            background-image: url('images/1731078128524.jpg'); /* Your actual image URL */
+
+        }
         .product-page {
             padding: 0 30px;
-            margin-top: 80px; /* To avoid content hiding under the header */
+            margin-top: 40px; /* To avoid content hiding under the header */
         }
 
         .intro {
@@ -23,14 +27,29 @@
         .intro h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
-            margin-top: 20px;
+            text-align: center;
         }
 
         .intro p {
             font-size: 1.2rem;
-            max-width: 800px;
+            max-width: 100%;
             margin: 0 auto;
             line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .intro h2 {
+                font-size: 1.8rem;
+            }
+
+            .product-category .category-title {
+                font-size: 1.5rem;
+            }
+
+            .product-item h3 {
+                font-size: 0.5rem; /* Adjust the size as needed */
+            }
+            
         }
 
         /* Product Category Section */
@@ -39,7 +58,7 @@
         }
 
         .category-title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 30px;
             text-align: center;
         }
@@ -106,19 +125,6 @@
             color: lightgray;
         }
 
-        .cta-btn {
-            background-color: #ffcc00;
-            color: #000;
-            padding: 10px 20px;
-            font-size: 1.2rem;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .cta-btn:hover {
-            background-color: #f5b800;
-        }
-
     </style>
 </head>
 
@@ -145,445 +151,526 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <h1>Explore Our Premium Products</h1>
-        <p>Premium quality at Affordable Rates</p>
+        <h1>Explore Our Products</h1>
+        <p>Premium Affordable Quality</p>
         <a href="product.html" class="cta-btn">Shop Now</a>
         <a href="service.html" class="cta-btn secondary">Book a Tour</a>
     </section>
 
-    <!-- Product Page Content -->
-    <section class="product-page">
-        <!-- Introduction Section -->
-        <section class="intro">
-            <h2>Shop Our Premium Products</h2>
-            <p>At Bee's Corner, we offer high-quality products to help you look and feel your best. Browse our selection of beauty products, stunning engagement rings, and more. Find the perfect item for yourself or a loved one today!</p>
-        </section>
+    
+<!-- Product Page Content -->
+<section class="product-page">
+    <!-- Introduction Section -->
+    <section class="intro">
+        <h2>Our Premium Products</h2>
+        <p>At Bee's Corner, we offer high-quality products to help you look and feel your best. Browse our selection of beauty products, stunning engagement rings, balloons for any occasion, and more. Find the perfect item for yourself or a loved one today!</p>
+    </section>
 
-        <!-- Wedding & Engagement Rings Section -->
-        <section class="product-category" id="wedding-rings">
-            <h3 class="category-title">Wedding & Engagement Rings</h3>
-            <div class="product-grid">
-                <div class="product-item">
-                    <img src="images/ring_anthony.jpg" alt="Engagement Ring">
-                    <h3>Engagement Rings</h3>
-                    <p>Beautiful rings to make your proposal unforgettable.</p>
-                    <div class="price">K600.00</div>
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
+    <!-- Wedding & Engagement Rings Section -->
+    <section class="product-category" id="wedding-rings">
+        <h3 class="category-title">Wedding & Engagement Rings</h3>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="images/ring_anthony.jpg" alt="Engagement Ring">
+                <h3>ANTHONY</h3>
+                <p>Beautiful rings to make your proposal unforgettable.</p>
+                <div class="price">K700.00</div>
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
                     </div>
                 </div>
-                <div class="product-item">
-                    <img src="images/ring_archieles.jpg" alt="Wedding Ring">
-                    <h3>Wedding Bands</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K600.00</div>
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/ring_brian.jpg" alt="Wedding Ring">
-                    <h3>Wedding Bands</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K600.00</div>
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/ring_brian.jpg" alt="Wedding Ring">
-                    <h3>Wedding Bands</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K600.00</div>
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/ring_chantria.jpg" alt="Wedding Ring">
-                    <h3>Wedding Bands</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K600.00</div>
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/ring_cornelius.jpg" alt="Wedding Ring">
-                    <h3>Wedding Bands</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K600.00</div>
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/ring_esmeralda.jpg" alt="Wedding Ring">
-                    <h3>Wedding Bands</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K600.00</div>
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/ring_gilbert.jpg" alt="Wedding Ring">
-                    <h3>Wedding Bands</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K600.00</div>
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/ring_grego.jpg" alt="Wedding Ring">
-                    <h3>Wedding Bands</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K600.00</div>
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/ring_henry.jpg" alt="Wedding Ring">
-                    <h3>Wedding Bands</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K600.00</div>
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/ring_kenji.jpg" alt="Wedding Ring">
-                    <h3>Wedding Bands</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K600.00</div>
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/ring_luna.jpg" alt="Wedding Ring">
-                    <h3>Wedding Bands</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K600.00</div>
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/ring_maurice.jpg" alt="Wedding Ring">
-                    <h3>Wedding Bands</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K600.00</div>
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/ring_morgan.jpg" alt="Wedding Ring">
-                    <h3>Wedding Bands</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K600.00</div>
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/ring_palin.jpg" alt="Wedding Ring">
-                    <h3>Wedding Bands</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K600.00</div>
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/ring_santino.jpg" alt="Wedding Ring">
-                    <h3>Wedding Bands</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K600.00</div>
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img src="images/ring_siena.jpg" alt="Wedding Ring">
-                    <h3>Wedding Bands</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K600.00</div>
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Add more products as needed... -->
             </div>
-        </section>
+            <div class="product-item">
+                <img src="images/ring_archieles.jpg" alt="Wedding Ring">
+                <h3>ARCHALLES</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K700.00</div>
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
 
-        <!-- Ladies Hand Bags -->
-        <section class="product-category" id="hand-bags">
-            <h3 class="category-title">Ladies Hand Bag</h3>
-            <div class="product-grid">
-                <div class="product-item">
-                    <img src="images/bag cc grey.jpg" alt="brown bag">
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
                     </div>
-                    <h3>Brown Ladies Bag</h3>
-                    <p>Beautiful rings to make your proposal unforgettable.</p>
-                    <div class="price">K70.00</div>
-                    <i>Availability: 5 in stock</i>
                 </div>
-                <div class="product-item">
-                    <img src="images/bag cc pinkpurple.jpg" alt="purple bag">
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <h3>Purple Ladies Bag</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K70.00</div>
-                    <i>Availability: 5 in stock</i>
-                </div>
-                <div class="product-item">
-                    <img src="images/bag cc.jpg" alt="grey bag">
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <h3>Purple Ladies Bag</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K70.00</div>
-                    <i>Availability: 5 in stock</i>
-                </div>
-                <div class="product-item">
-                    <img src="images/bag ck black.jpg" alt="black bag">
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <h3>Black Ladies Bag</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K70.00</div>
-                    <i>Availability: 5 in stock</i>
-                </div>
-                <div class="product-item">
-                    <img src="images/bag ck blue.jpg" alt="blue bag">
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <h3>Blue Ladies Bag</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K70.00</div>
-                    <i>Availability: 5 in stock</i>
-                </div>
-                <div class="product-item">
-                    <img src="images/bag ck grey.jpg" alt="grey bag">
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <h3>Ladies Bag</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K70.00</div>
-                    <i>Availability: 5 in stock</i>
-                </div>
-                <div class="product-item">
-                    <img src="images/bag ck pink.jpg" alt="purple bag">
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <h3>Pink Ladies Bag</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K70.00</div>
-                    <i>Availability: 5 in stock</i>
-                </div>
-                <div class="product-item">
-                    <img src="images/bag ck.jpg" alt="brown bag">
-                    <div class="ratings">
-                        <div class="star-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <h3>Brown Ladies Bag</h3>
-                    <p>Classic and modern designs to symbolize your love.</p>
-                    <div class="price">K70.00</div>
-                    <i>Availability: 5 in stock</i>
-                </div>
-                <!-- Add more products as needed... -->
             </div>
-        </section>
+            <div class="product-item">
+                <img src="images/ring_brian.jpg" alt="Wedding Ring">
+                <h3>BRYAN</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K700.00</div>
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/ring_chantria.jpg" alt="Wedding Ring">
+                <h3>CHANTRIA</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K700.00</div>
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/ring_cornelius.jpg" alt="Wedding Ring">
+                <h3>CORNELIUS</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K700.00</div>
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/ring_esmeralda.jpg" alt="Wedding Ring">
+                <h3>ESMERALDA</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K700.00</div>
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/ring_gilbert.jpg" alt="Wedding Ring">
+                <h3>GILBERT</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K700.00</div>
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/ring_grego.jpg" alt="Wedding Ring">
+                <h3>GREGO</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K700.00</div>
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/ring_henry.jpg" alt="Wedding Ring">
+                <h3>HENRY</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K700.00</div>
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/ring_kenji.jpg" alt="Wedding Ring">
+                <h3>KENJI</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K700.00</div>
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/ring_luna.jpg" alt="Wedding Ring">
+                <h3>LUNA</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K700.00</div>
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/ring_maurice.jpg" alt="Wedding Ring">
+                <h3>MAURICE</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K700.00</div>
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/ring_morgan.jpg" alt="Wedding Ring">
+                <h3>MORGAN</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K700.00</div>
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/ring_palin.jpg" alt="Wedding Ring">
+                <h3>PALIN</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K700.00</div>
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/ring_santino.jpg" alt="Wedding Ring">
+                <h3>SANTINO</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K700.00</div>
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/ring_siena.jpg" alt="Wedding Ring">
+                <h3>SIENA</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K700.00</div>
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Add more products as needed... -->
+        </div>
+    </section>
+
+    <!-- Balloons Section -->
+    <section class="product-category" id="balloons">
+        <h3 class="category-title"> Events' Balloons</h3>
+        <p style="text-align: center; padding-bottom:20px; font-size: 18px; font-weight: 200;">Perfect for any occasion! From gender reveals to baby showers, we offer a variety of balloon types and themes to make your event even more special.</p>
+        <div class="product-grid">
+            <!-- Character Balloons -->
+            <div class="product-item">
+                <img src="images/balloons_character.jpg" alt="Character Balloon">
+                <h3>Character Balloons</h3>
+                <p>Bring your favorite characters to life with our fun character balloons!</p>
+                <div class="price">K150.00</div>
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gender Reveal Balloons -->
+            <div class="product-item">
+                <img src="images/balloons_gender.jpg" alt="Gender Reveal Poppers">
+                <h3>Gender Reveal Poppers</h3>
+                <p>Make your gender reveal party unforgettable with our custom balloons!</p>
+                <div class="price">K200.00</div>
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Baby Shower Balloons -->
+            <div class="product-item">
+                <img src="images/balloon_showers.jpg" alt="Baby Shower Balloon">
+                <h3>Baby Shower Balloons</h3>
+                <p>Celebrate the arrival of your little one with our adorable baby shower balloons.</p>
+                <div class="price">K180.00</div>
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Engagement Balloons -->
+            <!-- <div class="product-item">
+                <img src="https://via.placeholder.com/300x200?text=Image+Placeholder" alt="Placeholder" alt="Engagement Balloon">
+                <h3>Engagement Balloons</h3>
+                <p>Celebrate your engagement with our elegant and decorative balloons!</p>
+                <div class="price">K250.00</div>
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Graduation Balloons -->
+            <!-- <div class="product-item">
+                <img src="https://via.placeholder.com/300x200?text=Image+Placeholder" alt="Graduation Balloon">
+                <h3>Graduation Balloons</h3>
+                <p>Commemorate your achievements with our graduation-themed balloons!</p>
+                <div class="price">K220.00</div>
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Add more balloon products as needed -->
+        </div>
+    </section>
+
+  
+
+
+    <!-- Ladies Hand Bags -->
+    <section class="product-category" id="hand-bags">
+        <h3 class="category-title">Ladies Hand Bag</h3>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="images/bag cc grey.jpg" alt="brown bag">
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                <h3>Brown Ladies Bag</h3>
+                <p>Beautiful rings to make your proposal unforgettable.</p>
+                <div class="price">K70.00</div>
+                <i>Availability: 5 in stock</i>
+            </div>
+            <div class="product-item">
+                <img src="images/bag cc pinkpurple.jpg" alt="purple bag">
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                <h3>Purple Ladies Bag</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K70.00</div>
+                <i>Availability: 5 in stock</i>
+            </div>
+            <div class="product-item">
+                <img src="images/bag cc.jpg" alt="grey bag">
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                <h3>Purple Ladies Bag</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K70.00</div>
+                <i>Availability: 5 in stock</i>
+            </div>
+            <div class="product-item">
+                <img src="images/bag ck black.jpg" alt="black bag">
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                <h3>Black Ladies Bag</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K70.00</div>
+                <i>Availability: 5 in stock</i>
+            </div>
+            <div class="product-item">
+                <img src="images/bag ck blue.jpg" alt="blue bag">
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                <h3>Blue Ladies Bag</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K70.00</div>
+                <i>Availability: 5 in stock</i>
+            </div>
+            <div class="product-item">
+                <img src="images/bag ck grey.jpg" alt="grey bag">
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                <h3>Ladies Bag</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K70.00</div>
+                <i>Availability: 5 in stock</i>
+            </div>
+            <div class="product-item">
+                <img src="images/bag ck pink.jpg" alt="purple bag">
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                <h3>Pink Ladies Bag</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K70.00</div>
+                <i>Availability: 5 in stock</i>
+            </div>
+            <div class="product-item">
+                <img src="images/bag ck.jpg" alt="brown bag">
+                <div class="ratings">
+                    <div class="star-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                <h3>Brown Ladies Bag</h3>
+                <p>Classic and modern designs to symbolize your love.</p>
+                <div class="price">K70.00</div>
+                <i>Availability: 5 in stock</i>
+            </div>
+            <!-- Add more products as needed... -->
+        </div>
+    </section>
 
         <!-- Hair and Beauty Products Section -->
         <section class="product-category" id="hair-beauty">
             <h3 class="category-title">Hair & Beauty Products</h3>
             <div class="product-grid">
                 <div class="product-item">
-                    <img src="https://via.placeholder.com/300x300" alt="Hair Product">
-                    <h3>Premium Hair Care</h3>
-                    <p>Luxurious shampoos and treatments for your hair.</p>
-                    <div class="price">$29.99</div>
+                    <img src="images/hair wig1.jpg" alt="Hair wig">
+                    <h3>Premium Hair Wig</h3>
+                    <p>Luxurious Hair Extension with varieties of colors</p>
+                    <div class="price">K100.00</div>
                     <div class="ratings">
                         <div class="star-rating">
                             <i class="fa fa-star"></i>
@@ -595,10 +682,10 @@
                     </div>
                 </div>
                 <div class="product-item">
-                    <img src="https://via.placeholder.com/300x300" alt="Beauty Product">
-                    <h3>Skin Care Essentials</h3>
-                    <p>Gentle skincare products for healthy, glowing skin.</p>
-                    <div class="price">$19.99</div>
+                    <img src="images/hair wig2.jpg" alt="Beauty Product">
+                    <h3>Curly Hair Extension</h3>
+                    <p>Curly Hair Extension with Vairied Colors</p>
+                    <div class="price">K100.00</div>
                     <div class="ratings">
                         <div class="star-rating">
                             <i class="fa fa-star"></i>
@@ -610,10 +697,10 @@
                     </div>
                 </div>
                 <div class="product-item">
-                    <img src="https://via.placeholder.com/300x300" alt="Beauty Product">
-                    <h3>Skin Care Essentials</h3>
-                    <p>Gentle skincare products for healthy, glowing skin.</p>
-                    <div class="price">$19.99</div>
+                    <img src="images/finger2.jpg" alt="Beauty Product">
+                    <h3>French Tip Nails</h3>
+                    <p>Feature soft pink base with a classic white tip adorned with delicate curved white lines.</p>
+                    <div class="price">K25.00</div>
                     <div class="ratings">
                         <div class="star-rating">
                             <i class="fa fa-star"></i>
@@ -625,10 +712,55 @@
                     </div>
                 </div>
                 <div class="product-item">
-                    <img src="https://via.placeholder.com/300x300" alt="Beauty Product">
-                    <h3>Skin Care Essentials</h3>
-                    <p>Gentle skincare products for healthy, glowing skin.</p>
-                    <div class="price">$19.99</div>
+                    <img src="images/finger3.jpg" alt="Beauty Product">
+                    <h3>Almond-Shaped Acrylic Nails</h3>
+                    <p>Feature a soft pink base color with white floral embellishments and rhinestones</p>
+                    <div class="price">K25.00</div>
+                    <div class="ratings">
+                        <div class="star-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="images/finger4.jpg" alt="Beauty Product">
+                    <h3>Butterfly Nails</h3>
+                    <p>Feature a gradient of blue and white polish with delicate butterfly decals</p>
+                    <div class="price">K25.00</div>
+                    <div class="ratings">
+                        <div class="star-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="images/finger5.jpg" alt="Beauty Product">
+                    <h3>Square Glittery Nails</h3>
+                    <p>Feature silver glitter and rhinestones and a perfect for glamoirous look </p>
+                    <div class="price">K25.00</div>
+                    <div class="ratings">
+                        <div class="star-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="images/finger_1.jpg" alt="Beauty Product">
+                    <h3>Silver Glitter Nails</h3>
+                    <p>Silver Glitter Press on nails</p>
+                    <div class="price">K25.00</div>
                     <div class="ratings">
                         <div class="star-rating">
                             <i class="fa fa-star"></i>
@@ -643,12 +775,12 @@
         </section>
     </section>
 
-<!-- Call to Action -->
-<section class="cta">
-    <h2>Picked One Already?</h2>
-    <p>Contact us today to discuss how we can Process Your Purchase</p>
-    <a href="contact.html" class="btn" id="cta-btn">Contact Us</a>
-</section>
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <h2>Ready to Place an Order?</h2>
+        <p>Contact us today to discuss how we can assist you.</p>
+        <a href="contact.html" class="btn">Contact Us</a>
+    </section>
 
 <!-- Footer Section -->
 <footer>

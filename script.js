@@ -22,54 +22,12 @@ document.getElementById('navbar-links').addEventListener('click', function(event
 
 
 
-// Services Carousel Functions
-let serviceSlideIndex = 1;
-const serviceSlides = document.querySelectorAll('.services-carousel-item');
-const serviceIndicators = document.querySelectorAll('.services-carousel-indicator');
-
-function showServiceSlides() {
-    if (serviceSlideIndex > serviceSlides.length) {
-        serviceSlideIndex = 1;
-    }
-    if (serviceSlideIndex < 1) {
-        serviceSlideIndex = serviceSlides.length;
-    }
-
-    // Move to the current slide
-    const serviceSlideContainer = document.querySelector('.services-carousel-slides');
-    serviceSlideContainer.style.transform = `translateX(-${(serviceSlideIndex - 1) * 100}%)`;
-
-    // Highlight the active indicator
-    serviceIndicators.forEach((indicator, index) => {
-        if (index === serviceSlideIndex - 1) {
-            indicator.classList.add('active');
-        } else {
-            indicator.classList.remove('active');
-        }
-    });
-}
-
-// Move to the next or previous service slide
-function moveServiceSlide(n) {
-    serviceSlideIndex += n;
-    showServiceSlides();
-}
-
-// Set the current service slide based on the clicked indicator
-function currentServiceSlide(n) {
-    serviceSlideIndex = n;
-    showServiceSlides();
-}
-
-// Initialize the Services Carousel
-showServiceSlides();
 
 
 
-// testimonial section - home page
-// Testimonials carousel
 let currentTestimonialSlide = 0;
 
+// Function to move the testimonial slide
 function moveTestimonialSlide() {
     const testimonialContainer = document.querySelector('.testimonials .carousel-container');
     const totalTestimonials = document.querySelectorAll('.testimonials blockquote').length;
@@ -87,3 +45,36 @@ function moveTestimonialSlide() {
 
 // Automatic sliding for testimonials
 setInterval(moveTestimonialSlide, 5000); // Change slide every 5 seconds
+
+
+// service cards from service page
+// JavaScript to handle "View Details" button click and closing when clicking outside
+document.querySelectorAll('.view-details').forEach(button => {
+    button.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent the click event from bubbling up to the document
+        
+        const serviceCard = this.closest('.service-card'); // Get the closest parent card
+        const detailsSection = serviceCard.querySelector('.service-details'); // Find the details section within this card
+
+        // Toggle the visibility of the service details
+        const isVisible = detailsSection.style.display === 'block';
+        if (isVisible) {
+            detailsSection.style.display = 'none'; // If already visible, hide it
+        } else {
+            detailsSection.style.display = 'block'; // If not visible, show it
+        }
+    });
+});
+
+// Close the service details if the user clicks outside the card
+document.addEventListener('click', function(event) {
+    const allServiceCards = document.querySelectorAll('.service-card');
+    allServiceCards.forEach(card => {
+        const detailsSection = card.querySelector('.service-details');
+        if (detailsSection.style.display === 'block' && !card.contains(event.target)) {
+            // If details are visible and the click is outside of the card, hide the details
+            detailsSection.style.display = 'none';
+        }
+    });
+});
+
