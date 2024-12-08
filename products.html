@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Responsive Product Cards</title>
+    <style>
+.hero {
+    background-image: url('images/1731078128524.jpg'); /* Your actual image URL */
+}
+
+.product-page {
+    padding: 0 30px;
+    margin-top: 40px; /* To avoid content hiding under the header */
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.intro h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    max-width: 100%;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .intro h2 {
+        font-size: 1.8rem;
+    }
+
+    .product-category .category-title {
+        font-size: 1.5rem;
+    }
+
+    .product-item h3 {
+        font-size: 0.5rem; /* Adjust the size as needed */
+    }
+}
+
+/* Section styling for fluid grid layout */
+.product-section {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+/* Hair and Beauty Products Header */
+.product-section h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px; /* Space between header and product cards */
+}
+
+/* Grid layout for product cards */
+.product-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Dynamic grid layout */
+    gap: 20px;
+    width: 100%;
+}
+
+/* Individual product card */
+.product-card {
+    display: flex;
+    flex-direction: row;  /* Horizontal layout (image on the left) */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    width: 100%;
+    max-width: 350px;  /* Card's max width */
+    transition: transform 0.3s ease;
+    height: auto; /* Makes card height flexible */
+}
+
+/* Hover effect for the product card */
+.product-card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Image section */
+.product-img {
+    width: 40%; /* Image takes up 40% of the card width */
+    margin-right: 20px;
+    position: relative;
+}
+
+.product-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.view-btn {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.view-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Text section */
+.product-text {
+    width: 60%; /* Text takes up the remaining 60% */
+    padding: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-text h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.product-text p {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+}
+
+/* Price and availability section */
+.product-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.product-availability {
+    font-size: 14px;
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.star {
+    color: #ffbb33;
+    font-size: 18px;
+    margin-right: 2px;
+}
+
+.stock-status {
+    color: #999;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Full width of the text section */
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #218838;
+}
+
+/* Modal for full image */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.modal .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    /* For smaller screens, keep horizontal card layout */
+    .product-card {
+        flex-direction: row;  /* Keep horizontal layout */
+    }
+
+    .product-section {
+        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); /* Smaller grid items */
+    }
+
+    .product-img {
+        width: 50%; /* Image width adjusted */
+        margin-right: 10px;
+    }
+
+    .product-text {
+        width: 50%; /* Text takes up the remaining space */
+    }
+
+    .view-btn {
+        margin-top: 10px;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-text h3 {
+        font-size: 18px;
+    }
+
+    .product-text p {
+        font-size: 12px;
+    }
+
+    .view-btn {
+        padding: 8px 12px;
+    }
+
+    /* Ensure grid layout remains intact for small screens */
+    .product-section {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 2fr)); /* Even smaller grid items */
+    }
+
+    .product-card {
+        flex-direction: row; /* Still keep horizontal layout for the card */
+    }
+
+    .product-img, .product-text {
+        width: 50%; /* Adjust both sections to 50% each */
+    }
+}
+
+    </style>
+</head>
+<body>
+<!-- Header Section -->
+<header>
+    <div class="navbar">
+        <img src="images/logo_edited.jpg" alt="logo">
+        <div class="logo">Bee's Corner</div>
+        <div class="hamburger-menu" id="hamburger-menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav class="navbar-links" id="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="service.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <h1>Welcome to Bee's Corner</h1>
+    <p>Your Go-To Place for Beauty, Engagement Rings & Unforgettable Tours</p>
+    <a href="product.html" class="cta-btn">Shop Now</a>
+    <a href="service.html" class="cta-btn secondary">Book a Tour</a>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+    <h2>About Bee's Corner</h2>
+    <p>Bee's Corner offers a curated selection of premium beauty products,  engagement rings, and personalized tour experiences to the Philippines. We pride ourselves on quality, service, and building lasting relationships with our customers.</p>
+</section>
+
+     <!-- Wedding and Engagement Ring -->
+    <h2>Wedding and Engagement Ring</h2>
+    <section class="product-section">
+    <!-- Product 1: Engagement Ring -->
+    <!-- Product 1: Engagement Ring - Anthony -->
+<div class="product-card">
+    <div class="product-img">
+        <img src="images/ring_anthony.jpg" alt="Engagement Ring - Anthony">
+        <button class="view-btn" onclick="viewImage('images/ring_anthony.jpg')">View</button>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    <div class="product-text">
+        <h3>Anthony</h3>
+        <p>A stunning engagement ring, perfect for your special day.</p>
+        <div class="product-price">K700.00</div>
+        <div class="product-availability">In Stock: 20</div>
+        <div class="product-rating">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+        </div>
+        <p>4.5 (50 reviews)</p>
+    </div>
+</div>
+
+<!-- Product 2: Wedding Ring - Archieles -->
+<div class="product-card">
+    <div class="product-img">
+        <img src="images/ring_archieles.jpg" alt="Wedding Ring - Archieles">
+        <button class="view-btn" onclick="viewImage('images/ring_archieles.jpg')">View</button>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    <div class="product-text">
+        <h3>Archieles</h3>
+        <p>A timeless wedding ring that symbolizes your eternal love.</p>
+        <div class="product-price">K700.00</div>
+        <div class="product-availability">In Stock: 30</div>
+        <div class="product-rating">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span><span class="star">☆</span> 
+        </div>
+        <p>3.8 (45 reviews)</p>
+    </div>
+</div>
+
+<!-- Product 3: Wedding Ring - Brian -->
+<div class="product-card">
+    <div class="product-img">
+        <img src="images/ring_brian.jpg" alt="Wedding Ring - Brian">
+        <button class="view-btn" onclick="viewImage('images/ring_brian.jpg')">View</button>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    <div class="product-text">
+        <h3>Brian</h3>
+        <p>Elegant and sophisticated, perfect for your wedding ceremony.</p>
+        <div class="product-price">K700.00</div>
+        <div class="product-availability">In Stock: 15</div>
+        <div class="product-rating">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span> 
+        </div>
+        <p>4.2 (30 reviews)</p>
+    </div>
+</div>
+
+<!-- Product 4: Wedding Ring - Chantria -->
+<div class="product-card">
+    <div class="product-img">
+        <img src="images/ring_chantria.jpg" alt="Wedding Ring - Chantria">
+        <button class="view-btn" onclick="viewImage('images/ring_chantria.jpg')">View</button>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    <div class="product-text">
+        <h3>Chantria</h3>
+        <p>Designed with intricate details for an elegant touch.</p>
+        <div class="product-price">K700.00</div>
+        <div class="product-availability">In Stock: 25</div>
+        <div class="product-rating">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span> 
+        </div>
+        <p>5.0 (60 reviews)</p>
+    </div>
+</div>
+
+<!-- Product 5: Wedding Ring - Cornelius -->
+<div class="product-card">
+    <div class="product-img">
+        <img src="images/ring_cornelius.jpg" alt="Wedding Ring - Cornelius">
+        <button class="view-btn" onclick="viewImage('images/ring_cornelius.jpg')">View</button>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    <div class="product-text">
+        <h3>Cornelius</h3>
+        <p>Simple and elegant, perfect for your lifetime commitment.</p>
+        <div class="product-price">K700.00</div>
+        <div class="product-availability">In Stock: 10</div>
+        <div class="product-rating">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span><span class="star">☆</span> 
+        </div>
+        <p>3.6 (20 reviews)</p>
+    </div>
+</div>
+
+<!-- Product 6: Wedding Ring - Esmeralda -->
+<div class="product-card">
+    <div class="product-img">
+        <img src="images/ring_esmeralda.jpg" alt="Wedding Ring - Esmeralda">
+        <button class="view-btn" onclick="viewImage('images/ring_esmeralda.jpg')">View</button>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    <div class="product-text">
+        <h3>Esmeralda</h3>
+        <p>Elegant and simple, designed to complement your wedding day.</p>
+        <div class="product-price">K700.00</div>
+        <div class="product-availability">In Stock: 18</div>
+        <div class="product-rating">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p>4.8 (40 reviews)</p>
+    </div>
+</div>
+
+<!-- Product 7: Wedding Ring - Gilbert -->
+<div class="product-card">
+    <div class="product-img">
+        <img src="images/ring_gilbert.jpg" alt="Wedding Ring - Gilbert">
+        <button class="view-btn" onclick="viewImage('images/ring_gilbert.jpg')">View</button>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    <div class="product-text">
+        <h3>Gilbert</h3>
+        <p>A luxurious ring to symbolize your everlasting love.</p>
+        <div class="product-price">K700.00</div>
+        <div class="product-availability">In Stock: 22</div>
+        <div class="product-rating">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span> 
+        </div>
+        <p>5.0 (75 reviews)</p>
+    </div>
+</div>
+
+<!-- Product 8: Wedding Ring - Grego -->
+<div class="product-card">
+    <div class="product-img">
+        <img src="images/ring_grego.jpg" alt="Wedding Ring - Grego">
+        <button class="view-btn" onclick="viewImage('images/ring_grego.jpg')">View</button>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    <div class="product-text">
+        <h3>Grego</h3>
+        <p>Classic design, a perfect symbol of your commitment.</p>
+        <div class="product-price">K700.00</div>
+        <div class="product-availability">In Stock: 12</div>
+        <div class="product-rating">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+        </div>
+        <p>4.2 (35 reviews)</p>
+    </div>
+</div>
+
+<!-- Product 9: Wedding Ring - Henry -->
+<div class="product-card">
+    <div class="product-img">
+        <img src="images/ring_henry.jpg" alt="Wedding Ring - Henry">
+        <button class="view-btn" onclick="viewImage('images/ring_henry.jpg')">View</button>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    <div class="product-text">
+        <h3>Henry</h3>
+        <p>Bold and modern design to mark your special day.</p>
+        <div class="product-price">K700.00</div>
+        <div class="product-availability">In Stock: 8</div>
+        <div class="product-rating">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p>5.0 (50 reviews)</p>
+    </div>
+</div>
+
+<!-- Product 10: Wedding Ring - Kenji -->
+<div class="product-card">
+    <div class="product-img">
+        <img src="images/ring_kenji.jpg" alt="Wedding Ring - Kenji">
+        <button class="view-btn" onclick="viewImage('images/ring_kenji.jpg')">View</button>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    <div class="product-text">
+        <h3>Kenji</h3>
+        <p>A sleek and stylish ring that complements your elegance.</p>
+        <div class="product-price">K700.00</div>
+        <div class="product-availability">In Stock: 18</div>
+        <div class="product-rating">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+        </div>
+        <p>4.6 (60 reviews)</p>
+    </div>
+</div>
+
+</section>
+
+    <!-- Event Balloons -->
+<h2>Event Balloons</h2>
+<section class="product-section">
+    <!-- Product 1: Character Balloon -->
+    <div class="product-card">
+        <div class="product-img">
+            <img src="images/balloons_character.jpg" alt="Character Balloon">
+            <button class="view-btn" onclick="viewImage('images/balloons_character.jpg')">View</button>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-text">
+            <h3>Character Balloon</h3>
+            <p>A fun and colorful character balloon perfect for baby showers.</p>
+            <div class="product-price">K700.00</div>
+            <div class="product-availability">In Stock: 50</div>
+            <div class="product-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>4.5 (20 reviews)</p>
+        </div>
+    </div>
+
+    <!-- Product 2: Gender Reveal Poppers -->
+    <div class="product-card">
+        <div class="product-img">
+            <img src="images/balloons_gender.jpg" alt="Gender Reveal Poppers">
+            <button class="view-btn" onclick="viewImage('images/balloons_gender.jpg')">View</button>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-text">
+            <h3>Gender Reveal Poppers</h3>
+            <p>Exciting gender reveal poppers for the perfect surprise!</p>
+            <div class="product-price">K700.00</div>
+            <div class="product-availability">In Stock: 30</div>
+            <div class="product-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>5.0 (45 reviews)</p>
+        </div>
+    </div>
+
+    <!-- Product 3: Baby Shower Balloon -->
+    <div class="product-card">
+        <div class="product-img">
+            <img src="images/balloon_showers.jpg" alt="Baby Shower Balloon">
+            <button class="view-btn" onclick="viewImage('images/balloon_showers.jpg')">View</button>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-text">
+            <h3>Baby Shower Balloon</h3>
+            <p>Celebrate the upcoming arrival with these adorable baby shower balloons.</p>
+            <div class="product-price">K700.00</div>
+            <div class="product-availability">In Stock: 40</div>
+            <div class="product-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>4.6 (30 reviews)</p>
+        </div>
+    </div>
+</section>
+
+
+     <!-- Ladies Hand Bags -->
+<h2>Ladies Hand Bags</h2>
+<section class="product-section">
+    <!-- Product 1: Brown Bag -->
+    <div class="product-card">
+        <div class="product-img">
+            <img src="images/bag cc grey.jpg" alt="Brown Bag">
+            <button class="view-btn" onclick="viewImage('images/bag cc grey.jpg')">View</button>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-text">
+            <h3>Brown Bag</h3>
+            <p>A stylish brown bag perfect for everyday use.</p>
+            <div class="product-price">K700.00</div>
+            <div class="product-availability">In Stock: 20</div>
+            <div class="product-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>4.5 (15 reviews)</p>
+        </div>
+    </div>
+
+    <!-- Product 2: Purple Bag -->
+    <div class="product-card">
+        <div class="product-img">
+            <img src="images/bag cc pinkpurple.jpg" alt="Purple Bag">
+            <button class="view-btn" onclick="viewImage('images/bag cc pinkpurple.jpg')">View</button>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-text">
+            <h3>Purple Bag</h3>
+            <p>This vibrant purple bag is perfect for adding a pop of color to any outfit.</p>
+            <div class="product-price">K700.00</div>
+            <div class="product-availability">In Stock: 18</div>
+            <div class="product-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>5.0 (22 reviews)</p>
+        </div>
+    </div>
+
+    <!-- Product 3: Grey Bag -->
+    <div class="product-card">
+        <div class="product-img">
+            <img src="images/bag cc.jpg" alt="Grey Bag">
+            <button class="view-btn" onclick="viewImage('images/bag cc.jpg')">View</button>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-text">
+            <h3>Grey Bag</h3>
+            <p>Neutral and versatile, this grey bag suits any occasion.</p>
+            <div class="product-price">K700.00</div>
+            <div class="product-availability">In Stock: 25</div>
+            <div class="product-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span><span class="star">☆</span>
+            </div>
+            <p>3.8 (10 reviews)</p>
+        </div>
+    </div>
+
+    <!-- Product 4: Black Bag -->
+    <div class="product-card">
+        <div class="product-img">
+            <img src="images/bag ck black.jpg" alt="Black Bag">
+            <button class="view-btn" onclick="viewImage('images/bag ck black.jpg')">View</button>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-text">
+            <h3>Black Bag</h3>
+            <p>Sleek and stylish black bag for any formal occasion.</p>
+            <div class="product-price">K700.00</div>
+            <div class="product-availability">In Stock: 15</div>
+            <div class="product-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>5.0 (30 reviews)</p>
+        </div>
+    </div>
+
+    <!-- Product 5: Blue Bag -->
+    <div class="product-card">
+        <div class="product-img">
+            <img src="images/bag ck blue.jpg" alt="Blue Bag">
+            <button class="view-btn" onclick="viewImage('images/bag ck blue.jpg')">View</button>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-text">
+            <h3>Blue Bag</h3>
+            <p>Bright and bold, this blue bag is a statement piece for any wardrobe.</p>
+            <div class="product-price">K700.00</div>
+            <div class="product-availability">In Stock: 12</div>
+            <div class="product-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span><span class="star">☆</span>
+            </div>
+            <p>3.9 (18 reviews)</p>
+        </div>
+    </div>
+
+    <!-- Product 6: Grey Bag -->
+    <div class="product-card">
+        <div class="product-img">
+            <img src="images/bag ck grey.jpg" alt="Grey Bag">
+            <button class="view-btn" onclick="viewImage('images/bag ck grey.jpg')">View</button>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-text">
+            <h3>Grey Bag</h3>
+            <p>A practical and stylish grey bag, perfect for daily use.</p>
+            <div class="product-price">K700.00</div>
+            <div class="product-availability">In Stock: 18</div>
+            <div class="product-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>4.3 (14 reviews)</p>
+        </div>
+    </div>
+
+    <!-- Product 7: Pink Bag -->
+    <div class="product-card">
+        <div class="product-img">
+            <img src="images/bag ck pink.jpg" alt="Pink Bag">
+            <button class="view-btn" onclick="viewImage('images/bag ck pink.jpg')">View</button>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-text">
+            <h3>Pink Bag</h3>
+            <p>Sweet and chic, this pink bag adds a fun touch to any outfit.</p>
+            <div class="product-price">K700.00</div>
+            <div class="product-availability">In Stock: 20</div>
+            <div class="product-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>4.4 (12 reviews)</p>
+        </div>
+    </div>
+
+    <!-- Product 8: Brown Bag -->
+    <div class="product-card">
+        <div class="product-img">
+            <img src="images/bag ck.jpg" alt="Brown Bag">
+            <button class="view-btn" onclick="viewImage('images/bag ck.jpg')">View</button>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-text">
+            <h3>Brown Bag</h3>
+            <p>A classic brown bag that suits any casual look.</p>
+            <div class="product-price">K700.00</div>
+            <div class="product-availability">In Stock: 30</div>
+            <div class="product-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span><span class="star">☆</span>
+            </div>
+            <p>4.2 (17 reviews)</p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Hair and Beauty Products Header -->
+<h2>Hair and Beauty Products</h2>
+<section class="product-section">
+    <!-- Product 1: Hair Wig -->
+    <div class="product-card">
+        <div class="product-img">
+            <img src="images/hair wig1.jpg" alt="Hair Wig">
+            <button class="view-btn" onclick="viewImage('images/hair wig1.jpg')">View</button>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-text">
+            <h3>Hair Wig</h3>
+            <p>Stylish and comfortable hair wig to give you a new look instantly.</p>
+            <div class="product-price">K700.00</div>
+            <div class="product-availability">In Stock: 15</div>
+            <div class="product-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>4.5 (18 reviews)</p>
+        </div>
+    </div>
+
+    <!-- Product 2: Beauty Product -->
+    <div class="product-card">
+        <div class="product-img">
+            <img src="images/hair wig2.jpg" alt="Beauty Product">
+            <button class="view-btn" onclick="viewImage('images/hair wig2.jpg')">View</button>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-text">
+            <h3>Beauty Product</h3>
+            <p>Enhance your beauty routine with this amazing beauty product.</p>
+            <div class="product-price">K700.00</div>
+            <div class="product-availability">In Stock: 25</div>
+            <div class="product-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span><span class="star">☆</span>
+            </div>
+            <p>3.8 (12 reviews)</p>
+        </div>
+    </div>
+
+    <!-- Product 3: Beauty Product -->
+    <div class="product-card">
+        <div class="product-img">
+            <img src="images/finger2.jpg" alt="Beauty Product">
+            <button class="view-btn" onclick="viewImage('images/finger2.jpg')">View</button>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-text">
+            <h3>Beauty Product</h3>
+            <p>Great for nail care, this beauty product helps to achieve smooth, beautiful nails.</p>
+            <div class="product-price">K700.00</div>
+            <div class="product-availability">In Stock: 30</div>
+            <div class="product-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>4.2 (14 reviews)</p>
+        </div>
+    </div>
+
+    <!-- Product 4: Beauty Product -->
+    <div class="product-card">
+        <div class="product-img">
+            <img src="images/finger3.jpg" alt="Beauty Product">
+            <button class="view-btn" onclick="viewImage('images/finger3.jpg')">View</button>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-text">
+            <h3>Beauty Product</h3>
+            <p>This beauty product is perfect for a polished, professional look.</p>
+            <div class="product-price">K700.00</div>
+            <div class="product-availability">In Stock: 20</div>
+            <div class="product-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>5.0 (25 reviews)</p>
+        </div>
+    </div>
+
+    <!-- Product 5: Beauty Product -->
+    <div class="product-card">
+        <div class="product-img">
+            <img src="images/finger4.jpg" alt="Beauty Product">
+            <button class="view-btn" onclick="viewImage('images/finger4.jpg')">View</button>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-text">
+            <h3>Beauty Product</h3>
+            <p>Perfect for manicure and pedicure treatments.</p>
+            <div class="product-price">K700.00</div>
+            <div class="product-availability">In Stock: 40</div>
+            <div class="product-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span><span class="star">☆</span>
+            </div>
+            <p>3.9 (16 reviews)</p>
+        </div>
+    </div>
+
+    <!-- Product 6: Beauty Product -->
+    <div class="product-card">
+        <div class="product-img">
+            <img src="images/finger5.jpg" alt="Beauty Product">
+            <button class="view-btn" onclick="viewImage('images/finger5.jpg')">View</button>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-text">
+            <h3>Beauty Product</h3>
+            <p>Achieve a flawless finish with this high-quality beauty product.</p>
+            <div class="product-price">K700.00</div>
+            <div class="product-availability">In Stock: 50</div>
+            <div class="product-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            </div>
+            <p>4.4 (30 reviews)</p>
+        </div>
+    </div>
+
+    <!-- Product 7: Beauty Product -->
+    <div class="product-card">
+        <div class="product-img">
+            <img src="images/finger_1.jpg" alt="Beauty Product">
+            <button class="view-btn" onclick="viewImage('images/finger_1.jpg')">View</button>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-text">
+            <h3>Beauty Product</h3>
+            <p>Ideal for nail care and achieving that perfect manicure look.</p>
+            <div class="product-price">K700.00</div>
+            <div class="product-availability">In Stock: 35</div>
+            <div class="product-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <p>5.0 (20 reviews)</p>
+        </div>
+    </div>
+</section>
+
+<!-- Modal for full image view -->
+<div class="modal" id="imageModal">
+    <button class="close-btn" onclick="closeModal()">×</button>
+    <img id="modalImage" src="" alt="Full View">
+</div>
+
+<!-- Call to Action -->
+<section class="cta">
+    <h2>Ready to Get Started?</h2>
+    <p>Contact us today to discuss how we can assist you.</p>
+    <a href="contact.html" class="btn" id="cta-btn">Contact Us</a>
+</section>
+
+
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2024 Bee's Corner. All Rights Reserved.</p>
+    <div class="social-icons">
+        <h3 style="padding-bottom: 15px;">Follow Us</h3>
+        <a href="#" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/67572102876" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <div class="dev">
+        <p>Powered By: <a href="https://mnszsite.github.io/mnszsite" target="_blank"> Mnszsite.aw</a></p>
+    </div>
+</footer>
+
+    <script>
+        // Show the full image in modal
+        function viewImage(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageSrc;
+            modal.style.display = 'flex';
+        }
+
+        // Close the modal
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

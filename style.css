@@ -413,7 +413,7 @@ header {
         flex-direction: column;
         gap: 15px;
         position: absolute;
-        top: 70px;
+        top: 60px;
         left: 0;
         right: 0;
         background-color: #000;

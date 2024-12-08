@@ -75,6 +75,36 @@ document.addEventListener('click', function(event) {
             // If details are visible and the click is outside of the card, hide the details
             detailsSection.style.display = 'none';
         }
-    });
+    });s
 });
+
+
+// modal
+// Function to open the modal and show the full image
+function viewImage(imageSrc) {
+    // Get the modal element and the modal image element
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modal-img');
+    
+    // Set the image source of the modal to the clicked image source
+    modalImage.src = imageSrc;
+    
+    // Display the modal
+    modal.style.display = "flex";
+}
+
+// Function to close the modal
+function closeModal() {
+    const modal = document.getElementById('modal');
+    modal.style.display = "none";
+}
+
+// Close the modal when clicking outside the image
+window.onclick = function(event) {
+    const modal = document.getElementById('modal');
+    if (event.target === modal) {
+        closeModal();
+    }
+}
+
 
